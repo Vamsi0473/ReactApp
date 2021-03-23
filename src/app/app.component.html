@@ -1,0 +1,17 @@
+<form class="example-form">
+
+  <mat-form-field appearance="outline">
+    <input type="text"  matInput placeholder="Plan Client" [formControl]="planClient" [matAutocomplete]="auto">
+        <mat-autocomplete #auto="matAutocomplete">
+          <mat-option *ngFor="let client of filteredOptions | async" [value]="client">
+           {{client}}
+          </mat-option>
+        </mat-autocomplete>
+  </mat-form-field>
+  </form>
+  
+  
+  
+  <!-- Copyright 2018 Google Inc. All Rights Reserved.
+      Use of this source code is governed by an MIT-style license that
+      can be found in the LICENSE file at http://angular.io/license -->
