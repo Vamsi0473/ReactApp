@@ -9,7 +9,7 @@ pipeline {
         }
         stage('Push image') {
          steps {
-           withDockerRegistry([url: "https://536703334988.dkr.ecr.ap-southeast-2.amazonaws.com/test-repository",credentialsId: "ecr:ap-southeast-2:demo-ecr-credentials"]) {
+           withDockerRegistry([url: "https://793737242214.dkr.ecr.us-east-1.amazonaws.com/react-app",credentialsId: "AWS_EKS"]) {
            bat 'docker push sampleapp:latest'
                }
         }
