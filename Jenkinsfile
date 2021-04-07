@@ -4,10 +4,11 @@ pipeline {
     stages {
         stage('Build') {
            steps {
-               script{
-               sh 'docker build -t sampleapp .'
+               sh 'PWD'
+               sh 'ls'
+               sh 'docker build -t sampleapp -f ./Dockerfile .'
               sh 'docker tag sampleapp:latest 793737242214.dkr.ecr.us-east-1.amazonaws.com/react-app:v1'
-               }
+               
             }
         }
        /* stage('Push image') {
