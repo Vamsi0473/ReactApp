@@ -9,6 +9,7 @@ pipeline {
         //}
         stage('Push image') {
          steps {
+             script{
            //withDockerRegistry([url: "https://793737242214.dkr.ecr.us-east-1.amazonaws.com/react-app",credentialsId: "AWS_EKS"]) {
            //bat 'docker push sampleapp:latest'
               //  }
@@ -18,6 +19,7 @@ pipeline {
                      def myImage=docker.build('react-app')
                              myImage.push('1.0.0')
                    }
+             }
         }
         }
         stage('Deploy') {
