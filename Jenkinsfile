@@ -22,7 +22,7 @@ pipeline {
                      'ecr:us-east-1:AWS_EKS')
                    {
                      def myImage=docker.build('react-app')
-                             myImage.push('1.0.1')
+                            // myImage.push('1.0.1')
                    }
              }
         }
