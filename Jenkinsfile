@@ -29,7 +29,11 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                bat 'kubectl get services'
+                
+                withAWS(profile:'myProfile') {
+     bat 'kubectl get services'
+}
+               
             }
         }
     }
