@@ -5,7 +5,7 @@ pipeline {
         stage('Build') {
            steps {
              
-               bat 'ccd'
+               
               //bat 'docker tag sampleapp:latest 793737242214.dkr.ecr.us-east-1.amazonaws.com/react-app:v1'
                
             }
