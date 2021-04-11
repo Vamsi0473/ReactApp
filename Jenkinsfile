@@ -29,9 +29,12 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                
-                withAWS(profile:'myProfile') {
+
+               /* withAWS(profile:'eksuser') {
      bat 'kubectl get services'
+}*/
+withAWS(credentials: 'AWS_EKS', region: 'us-east-1') {
+    bat 'aws iam get-user'
 }
                
             }
