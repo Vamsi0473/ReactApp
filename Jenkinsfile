@@ -5,7 +5,7 @@ pipeline {
         stage('Build') {
            steps {
              
-               
+             bat 'docker build -t sampleapp -f ./Dockerfile .'  
               //bat 'docker tag sampleapp:latest 793737242214.dkr.ecr.us-east-1.amazonaws.com/react-app:v1'
                
             }
