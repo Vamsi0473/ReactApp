@@ -35,6 +35,7 @@ pipeline {
 }*/
 withAWS(credentials: 'AWS_EKS', region: 'us-east-1') {
     bat 'aws iam get-user'
+    bat 'kubectl get services'
 }
                
             }
