@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     stages {
-        stage('Build') {
+      /*  stage('Build') {
            steps {
              
              bat 'docker build -t sampleapp -f ./Dockerfile .'  
@@ -26,7 +26,7 @@ pipeline {
                    }
              }
         }
-        }
+        }*/
         stage('Deploy') {
             steps {
 
@@ -34,7 +34,7 @@ pipeline {
      bat 'kubectl get services'
 }*/
 withAWS(credentials: 'AWS_EKS', region: 'us-east-1') {
-    bat 'aws iam get-user'
+    bat 'aws iam get-user --profile eksuser'
     bat 'kubectl get services'
 }
                
