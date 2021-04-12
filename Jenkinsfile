@@ -9,7 +9,7 @@ pipeline {
               //bat 'docker tag sampleapp:latest 793737242214.dkr.ecr.us-east-1.amazonaws.com/react-app:v1'
                
             }
-        }
+        }*/
        
        
         stage('Push image') {
@@ -22,12 +22,12 @@ pipeline {
                      'ecr:us-east-1:AWS_EKS')
                    {
                      def myImage=docker.build('react-app')
-                            myImage.push('1.0.2')
+                            myImage.push('1.0.3')
                    }
              }
         }
-        }*/
-        stage('Deploy') {
+        }
+       /* stage('Deploy') {
             steps {
 
                 withAWS(profile:'eksuser') {
@@ -39,6 +39,6 @@ withAWS(credentials: 'AWS_EKS', region: 'us-east-1') {
 }
                
             }
-        }
+        }*/
     }
 }
